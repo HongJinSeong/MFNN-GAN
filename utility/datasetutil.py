@@ -152,11 +152,8 @@ class FingerveinDataset(Dataset):
         img1 = Image.fromarray(img1)
         img2 = Image.fromarray(img2)
 
-        params = transforms.RandomResizedCrop.get_params(img1, scale=(0.7, 1.0), ratio=(0.75, 1.333))
 
-        img1 = TF.crop(img1, *params)
-        img1=img1.resize((224, 224))
-        img2 = TF.crop(img2, *params)
+        img1 = img1.resize((224, 224))
         img2 = img2.resize((224, 224))
 
 
